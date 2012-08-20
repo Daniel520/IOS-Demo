@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ESRenderer.h"
 
+@class GameController;
+
 // This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.
 // The view content is basically an EAGL surface you render your OpenGL scene into.
 // Note that setting the view non-opaque will only work if the EAGL surface has an alpha channel.
@@ -17,6 +19,7 @@
 	id <ESRenderer> renderer;
 	BOOL animating;
 	BOOL displayLinkSupported;
+    //用来计算屏幕每秒应该渲染多少次 1/60 * animationFrameUnterval ,其中60是设备的最大频率
 	NSInteger animationFrameInterval;
 	// Use of the CADisplayLink class is the preferred method for controlling your animation timing.
 	// CADisplayLink will link to the main display and fire every vsync when added to a given run-loop.
@@ -24,6 +27,8 @@
 	// isn't available.
 	id displayLink;
     NSTimer *animationTimer;
+    
+    GameController *sharedGameController;
 }
 
 //有规律地在屏幕上进行渲染，animating=YES,如果当前类没有在屏幕上进行渲染,animating=NO.

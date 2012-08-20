@@ -7,21 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F44C31E15DBDFF700669DCC /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F44C31D15DBDFF700669DCC /* MainWindow-iPad.xib */; };
+		0F44C32815DBFC3C00669DCC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		0F4D9E3515E26D0200DDC4B3 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4D9E3415E26D0200DDC4B3 /* GameController.m */; };
+		0F4D9E3D15E26E3D00DDC4B3 /* AbstractScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4D9E3C15E26E3D00DDC4B3 /* AbstractScene.m */; };
+		0F4D9E4515E2970600DDC4B3 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4D9E4415E2970600DDC4B3 /* GameScene.m */; };
 		1D3623260D0F684500981E51 /* CH03_SLQTSORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CH03_SLQTSORAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2514C27210084DB100A42282 /* ES1Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2514C26E10084DB100A42282 /* ES1Renderer.m */; };
-		2514C27310084DB100A42282 /* ES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2514C27010084DB100A42282 /* ES2Renderer.m */; };
 		2514C27B10084DCA00A42282 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2514C27910084DCA00A42282 /* Shader.fsh */; };
 		2514C27C10084DCA00A42282 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2514C27A10084DCA00A42282 /* Shader.vsh */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* EAGLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F44C31D15DBDFF700669DCC /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		0F4D9E3315E26D0200DDC4B3 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		0F4D9E3415E26D0200DDC4B3 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		0F4D9E3715E26D8F00DDC4B3 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		0F4D9E3815E26D9C00DDC4B3 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		0F4D9E3915E26DA500DDC4B3 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		0F4D9E3B15E26E3D00DDC4B3 /* AbstractScene.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AbstractScene.h; sourceTree = "<group>"; };
+		0F4D9E3C15E26E3D00DDC4B3 /* AbstractScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractScene.m; sourceTree = "<group>"; };
+		0F4D9E4315E2970600DDC4B3 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		0F4D9E4415E2970600DDC4B3 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CH03_SLQTSORAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CH03_SLQTSORAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CH03_SLQTSORAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CH03_SLQTSORAppDelegate.m; sourceTree = "<group>"; };
@@ -29,8 +42,6 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2514C26D10084DB100A42282 /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES1Renderer.h; sourceTree = "<group>"; };
 		2514C26E10084DB100A42282 /* ES1Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES1Renderer.m; sourceTree = "<group>"; };
-		2514C26F10084DB100A42282 /* ES2Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES2Renderer.h; sourceTree = "<group>"; };
-		2514C27010084DB100A42282 /* ES2Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES2Renderer.m; sourceTree = "<group>"; };
 		2514C27110084DB100A42282 /* ESRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRenderer.h; sourceTree = "<group>"; };
 		2514C27910084DCA00A42282 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
 		2514C27A10084DCA00A42282 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
@@ -64,8 +75,6 @@
 			children = (
 				2514C26D10084DB100A42282 /* ES1Renderer.h */,
 				2514C26E10084DB100A42282 /* ES1Renderer.m */,
-				2514C26F10084DB100A42282 /* ES2Renderer.h */,
-				2514C27010084DB100A42282 /* ES2Renderer.m */,
 				2514C27110084DB100A42282 /* ESRenderer.h */,
 				28FD14FC0DC6FC130079059D /* EAGLView.h */,
 				28FD14FD0DC6FC130079059D /* EAGLView.m */,
@@ -73,6 +82,51 @@
 				1D3623250D0F684500981E51 /* CH03_SLQTSORAppDelegate.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		0F44C31C15DBDFF500669DCC /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				0F44C31D15DBDFF700669DCC /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		0F4D9E3115E26CED00DDC4B3 /* GameController */ = {
+			isa = PBXGroup;
+			children = (
+				0F4D9E3315E26D0200DDC4B3 /* GameController.h */,
+				0F4D9E3415E26D0200DDC4B3 /* GameController.m */,
+			);
+			name = GameController;
+			sourceTree = "<group>";
+		};
+		0F4D9E3615E26D7500DDC4B3 /* Global Headers */ = {
+			isa = PBXGroup;
+			children = (
+				0F4D9E3715E26D8F00DDC4B3 /* Global.h */,
+				0F4D9E3815E26D9C00DDC4B3 /* SynthesizeSingleton.h */,
+				0F4D9E3915E26DA500DDC4B3 /* Common.h */,
+			);
+			name = "Global Headers";
+			sourceTree = "<group>";
+		};
+		0F4D9E3A15E26E1D00DDC4B3 /* Abstract Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0F4D9E3B15E26E3D00DDC4B3 /* AbstractScene.h */,
+				0F4D9E3C15E26E3D00DDC4B3 /* AbstractScene.m */,
+			);
+			name = "Abstract Classes";
+			sourceTree = "<group>";
+		};
+		0F4D9E4215E296F300DDC4B3 /* Game Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0F4D9E4315E2970600DDC4B3 /* GameScene.h */,
+				0F4D9E4415E2970600DDC4B3 /* GameScene.m */,
+			);
+			name = "Game Scenes";
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -95,10 +149,15 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0F4D9E4215E296F300DDC4B3 /* Game Scenes */,
+				0F4D9E3A15E26E1D00DDC4B3 /* Abstract Classes */,
+				0F4D9E3615E26D7500DDC4B3 /* Global Headers */,
+				0F4D9E3115E26CED00DDC4B3 /* GameController */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				2514C27610084DB600A42282 /* Shaders */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				0F44C31C15DBDFF500669DCC /* iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -164,7 +223,11 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CH03_SLQTSOR" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,7 +244,8 @@
 			files = (
 				2514C27B10084DCA00A42282 /* Shader.fsh in Resources */,
 				2514C27C10084DCA00A42282 /* Shader.vsh in Resources */,
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				0F44C31E15DBDFF700669DCC /* MainWindow-iPad.xib in Resources */,
+				0F44C32815DBFC3C00669DCC /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +260,9 @@
 				1D3623260D0F684500981E51 /* CH03_SLQTSORAppDelegate.m in Sources */,
 				28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */,
 				2514C27210084DB100A42282 /* ES1Renderer.m in Sources */,
-				2514C27310084DB100A42282 /* ES2Renderer.m in Sources */,
+				0F4D9E3515E26D0200DDC4B3 /* GameController.m in Sources */,
+				0F4D9E3D15E26E3D00DDC4B3 /* AbstractScene.m in Sources */,
+				0F4D9E4515E2970600DDC4B3 /* GameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +281,9 @@
 				GCC_PREFIX_HEADER = CH03_SLQTSOR_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "CH03_SLQTSOR-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = CH03_SLQTSOR;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -229,7 +297,9 @@
 				GCC_PREFIX_HEADER = CH03_SLQTSOR_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "CH03_SLQTSOR-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = CH03_SLQTSOR;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

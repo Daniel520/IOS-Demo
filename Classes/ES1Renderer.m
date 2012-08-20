@@ -7,6 +7,12 @@
 //
 
 #import "ES1Renderer.h"
+#import "Global.h"
+#import "GameController.h"
+
+@interface ES1Renderer (Private)
+- (void)initOpenGL;
+@end
 
 @implementation ES1Renderer
 
@@ -29,66 +35,23 @@
 		glBindFramebufferOES(GL_FRAMEBUFFER_OES, defaultFramebuffer);
 		glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
 		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, colorRenderbuffer);
+        
+        // Grab a reference to the shared game controller.
+        sharedGameController = [GameController sharedGameController];
 	}
 	
 	return self;
 }
 
 - (void) render {
-    // Replace the implementation of this method to do your own custom drawing
     
-//    static const GLfloat squareVertices[] = {
-//        -0.5f,  -0.33f,
-//         0.5f,  -0.33f,
-//        -0.5f,   0.33f,
-//         0.5f,   0.33f,
-//    };   
-    
-    static const GLfloat squareVertices[] = {
-         1.0f,  -1.0f,
-        -1.0f,  -1.0f,
-        -1.0f,   1.0f,
-         1.0f,   1.0f,
-    };
-    
-    static const GLubyte squareColors[] = {
-        255, 255,   0, 255,
-        0,   255, 255, 255,
-        0,     0,   0,   0,
-        255,   0, 255, 255,
-    };
-    
-    static float transY = 0.0f;
-	
-	// This application only creates a single context which is already set current at this point.
-	// This call is redundant, but needed if dealing with multiple contexts.
-    [EAGLContext setCurrentContext:context];
-    
-	// This application only creates a single default framebuffer which is already bound at this point.
-	// This call is redundant, but needed if dealing with multiple framebuffers.
-    glBindFramebufferOES(GL_FRAMEBUFFER_OES, defaultFramebuffer);
-    glViewport(0, 0, backingWidth, backingHeight);
-    
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-    glTranslatef(0.0f, (GLfloat)(sinf(transY)/2.0f), 0.0f);
-    transY += 0.075f;
-	
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+    // Clear the color buffer which clears the screen
     glClear(GL_COLOR_BUFFER_BIT);
     
-    glVertexPointer(2, GL_FLOAT, 0, squareVertices);
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
-    glEnableClientState(GL_COLOR_ARRAY);
+    // Ask the game controller to render the current scene
+    [sharedGameController renderCurrentScene];
     
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
-	// This application only creates a single color renderbuffer which is already bound at this point.
-	// This call is redundant, but needed if dealing with multiple renderbuffers.
-    glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
+    // Present the renderbuffer to the screen
     [context presentRenderbuffer:GL_RENDERBUFFER_OES];
 }
 
@@ -105,6 +68,9 @@
 		NSLog(@"Failed to make complete framebuffer object %x", glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES));
         return NO;
     }
+    
+    // Initialize OpenGL now that the necessary buffers have been created and bound
+    [self initOpenGL];
     
     return YES;
 }
@@ -132,6 +98,44 @@
 	context = nil;
 	
 	[super dealloc];
+}
+
+@end
+
+#pragma mark -
+#pragma mark Private implementation
+
+@implementation ES1Renderer (Private)
+
+- (void)initOpenGL
+{
+    SLQLOG(@"INFO - ES1Renderer: Initializing OpenGL");
+    
+    // Switch to GL_PROJECTION matrix mode and reset the current matrix with the identity martix
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    
+    glOrthof(0, backingWidth, 0, backingHeight, -1, 1);
+    
+    // Set the viewport
+    glViewport(0, 0, backingWidth, backingHeight);
+    
+    SLQLOG(@"INFO - ES1Renderer: Setting glOrthof to width=%d and height=%d", backingWidth, backingHeight);
+    
+    
+    // Swtich to GL_MODELVIEW so we can now draw our objects
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    
+    // Set the color to use when clearing the screen with glClear
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    
+    // We just create a 2D game, so no need to set the depth testing on
+    glDisable(GL_DEPTH_TEST);
+    
+    // Enable the OpenGL states we are going to be using when rendering
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
 }
 
 @end
